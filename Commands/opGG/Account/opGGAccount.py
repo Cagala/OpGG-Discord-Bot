@@ -27,6 +27,13 @@ class opGGAccount(View):
 
             self.want_delete = False
 
+        async def asyncDeleteMessage(self):
+            waiting = await self.bot.wait_for('interaction', check=lambda i: i == self.ctx, timeout=7)
+            if waiting:
+                return True
+            else:
+                await self.ctx.edit_message("f")
+
         #First Page Button
         @discord.ui.button(emoji="⏪", style=discord.ButtonStyle.secondary)
         async def firstPage_callback(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -116,6 +123,7 @@ class opGGAccount(View):
 
         async def setup(self):
             await self.ctx.defer()
+            await self.asyncDeleteMessage()
             self.children[0].disabled = True
             self.children[1].disabled = True
 

@@ -1,4 +1,3 @@
-from arrow import now
 import discord
 import requests
 import json
@@ -83,7 +82,6 @@ class opAcGames():
         dataJson = json.loads(r.content)['data']
 
         for i in range(10):
-            print(f"Veriler alınıyor - {datetime.now().strftime('%H:%M:%S')}")
             gameData = dataJson[i]
             summonerData = gameData['myData']
 
@@ -153,7 +151,6 @@ class opAcGames():
     async def getEmbedList(self):
         self.get_builds()
         self.get_datas()
-        print(f"Embedler hazırlanıyor. {datetime.now().strftime('%H:%M:%S')}")
         for i in range(10):
             embed = discord.Embed(title=f"{self.datas[f'{i}.gameMap']} - {self.datas[f'{i}.championName']} #{i+1}", color=EMBED_COLOR)
             embed.set_thumbnail(url=self.datas[f'{i}.championUrl'])
