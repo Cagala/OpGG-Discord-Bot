@@ -27,13 +27,6 @@ class opGGAccount(View):
 
             self.want_delete = False
 
-        async def asyncDeleteMessage(self):
-            waiting = await self.bot.wait_for('interaction', check=lambda i: i == self.ctx, timeout=7)
-            if waiting:
-                return True
-            else:
-                await self.ctx.edit_message("f")
-
         #First Page Button
         @discord.ui.button(emoji="⏪", style=discord.ButtonStyle.secondary)
         async def firstPage_callback(self, button: discord.ui.Button, interaction: discord.Interaction):
@@ -76,9 +69,9 @@ class opGGAccount(View):
         async def deleteButton_callback(self, button, interaction):
             
             if self.want_delete == True:
-                rmtree(path.dirname(__file__) + r"\Runes\%s"%self.selfID)
-
                 await interaction.message.delete()
+                
+                rmtree(path.dirname(__file__) + r"\Runes\%s"%self.selfID)
             else:
                 self.want_delete = True
                 button.style = discord.ButtonStyle.danger
@@ -143,4 +136,3 @@ class opGGAccount(View):
             self.Embeds[self.current_page].set_footer(text=f"{self.Embeds.index(self.Embeds[self.current_page])+1}/{self.EmbedsLen}")
             
             await self.ctx.respond(content=self.ctx.author.mention, embed=self.Embeds[self.current_page], view=self)
-            await self.asyncDeleteMessage()
