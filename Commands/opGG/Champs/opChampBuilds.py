@@ -58,7 +58,7 @@ class opChampBuilds:
         self.champPosInf = champPositionsData[champPositionIndex]
         
         self.WR = format(self.champPosInf['stats']['win_rate']*100, ".2f")
-        self.RoleRate = format(self.champPosInf['stats']['role_rate']*100, ".2f") if int(self.champPosInf['stats']['role_rate']) > 1 else 00.00
+        self.RoleRate = format(self.champPosInf['stats']['role_rate']*100, ".2f")
         self.KDA = format(self.champPosInf['stats']['kda'], ".2f")
 
 
@@ -72,7 +72,7 @@ class opChampBuilds:
         for i in self.tips:
             self.tipsList.append(f"**⋆** {i}")
         if self.tipsList == []:
-            self.tipsList.append("Veri bulunamadı.")
+            self.tipsList.append("**⋆** Veri bulunamadı.")
 
         firstPageEmbed = discord.Embed(title=f"{self.champName} - {self.position}", color=EMBED_COLOR)
         
