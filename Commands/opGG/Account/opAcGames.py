@@ -1,4 +1,3 @@
-from arrow import now
 import discord
 import requests
 import json
