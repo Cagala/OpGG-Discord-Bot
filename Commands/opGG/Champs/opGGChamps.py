@@ -68,9 +68,9 @@ class opGGChamps(View):
         async def deleteButton_callback(self, button, interaction):
             
             if self.want_delete == True:
-                rmtree(path.dirname(__file__) + r"\Runes\%s"%self.selfID)
-
                 await interaction.message.delete()
+                
+                rmtree(path.dirname(__file__) + r"\Runes\%s"%self.selfID)
             else:
                 self.want_delete = True
                 button.style = discord.ButtonStyle.danger
