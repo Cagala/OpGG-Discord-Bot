@@ -1,0 +1,8 @@
+discord
+requests
+json
+import PIL
+io
+os
+datetime
+shutil
