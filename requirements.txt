@@ -1,2 +1,6 @@
 py-cord==2.1.1
 requests==2.25.1
+html5lib==1.1
+asyncio==3.4.3
+async-timeout==3.0.1
+beautifulsoup4==4.9.3
