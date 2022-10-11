@@ -123,7 +123,6 @@ class opGGAccount(View):
 
         async def setup(self):
             await self.ctx.defer()
-            await self.asyncDeleteMessage()
             self.children[0].disabled = True
             self.children[1].disabled = True
 
@@ -144,3 +143,4 @@ class opGGAccount(View):
             self.Embeds[self.current_page].set_footer(text=f"{self.Embeds.index(self.Embeds[self.current_page])+1}/{self.EmbedsLen}")
             
             await self.ctx.respond(content=self.ctx.author.mention, embed=self.Embeds[self.current_page], view=self)
+            await self.asyncDeleteMessage()
