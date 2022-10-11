@@ -1,7 +1,7 @@
 discord
 requests
 json
-import PIL
+PIL
 io
 os
 datetime
