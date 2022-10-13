@@ -80,7 +80,7 @@ class opChampBuilds:
         firstPageEmbed.add_field(name="KDA", value=f"{self.KDA}", inline=True)
         firstPageEmbed.add_field(name="Role Rate", value=f"%{self.RoleRate}", inline=True)
         
-        firstPageEmbed.add_field(name="Oynanış İpuçları", value="\n".join(map(str, self.tipsList)), inline=False)
+        firstPageEmbed.add_field(name="Gameplay Tips", value="\n".join(map(str, self.tipsList)), inline=False)
         firstPageEmbed.set_thumbnail(url=self.champImageUrl)
 
         self.embedList.append(firstPageEmbed)
@@ -206,7 +206,7 @@ class opChampBuilds:
             buildEmbed = discord.Embed(title=f"{self.champName} - {self.position} Build #{buildListNumber+1}")
             buildEmbed.add_field(name="Build Win Rate", value=f"%{buildWR}", inline=True)
             buildEmbed.add_field(name="Build Pick Rate", value=f"%{buildPickRate}", inline=True)
-            buildEmbed.add_field(name="Skill Sıralaması", value=' > '.join(map(str,skillsOrder)), inline=False)
+            buildEmbed.add_field(name="Skill Order", value=' > '.join(map(str,skillsOrder)), inline=False)
             buildEmbed.set_thumbnail(url=self.champImageUrl)
 
             with open(self.path+r"\%s.png"%buildListNumber, 'rb') as f:
