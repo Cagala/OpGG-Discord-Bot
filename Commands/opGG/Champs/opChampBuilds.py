@@ -58,7 +58,7 @@ class opChampBuilds:
         self.champPosInf = champPositionsData[champPositionIndex]
         
         self.WR = format(self.champPosInf['stats']['win_rate']*100, ".2f")
-        self.RoleRate = format(self.champPosInf['stats']['role_rate']*100, ".2f") if int(self.champPosInf['stats']['role_rate']) > 1 else 00.00
+        self.RoleRate = format(self.champPosInf['stats']['role_rate']*100, ".2f")
         self.KDA = format(self.champPosInf['stats']['kda'], ".2f")
 
 
@@ -72,7 +72,7 @@ class opChampBuilds:
         for i in self.tips:
             self.tipsList.append(f"**⋆** {i}")
         if self.tipsList == []:
-            self.tipsList.append("Veri bulunamadı.")
+            self.tipsList.append("**⋆** Veri bulunamadı.")
 
         firstPageEmbed = discord.Embed(title=f"{self.champName} - {self.position}", color=EMBED_COLOR)
         
@@ -103,119 +103,122 @@ class opChampBuilds:
 
         Line = Image.open(io.BytesIO(requests.get("https://i.ibb.co/L65yDD8/line-divider-transparent-9.png").content)).resize((126,83))
         trinket = Image.open(io.BytesIO(requests.get("https://opgg-static.akamaized.net/images/lol/item/3361.png").content)).resize((24, 24))
-        for buildListNumber in range(3):
-            summonerMainRunes = runeDatas[buildListNumber]['primary_rune_ids']
-            summonerSecondRunes = runeDatas[buildListNumber]['secondary_rune_ids']
-            summonerStatsRune = runeDatas[buildListNumber]['stat_mod_ids']
+        try:
+            for buildListNumber in range(3):
+                summonerMainRunes = runeDatas[buildListNumber]['primary_rune_ids']
+                summonerSecondRunes = runeDatas[buildListNumber]['secondary_rune_ids']
+                summonerStatsRune = runeDatas[buildListNumber]['stat_mod_ids']
 
-            im = Image.new("RGBA", (326, 120), (255, 0, 0, 0))
-            for m in range(9):
-                if m == 0:
-                    mainRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[0]) + ".png").content)).resize((100, 96))
-                    im.paste(mainRune, (0, 0))
-                elif m == 1:
-                    secondRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[1]) + ".png").content)).resize((24, 24))
-                    im.paste(secondRune, (96, 0))
-                elif m == 2:
-                    thirdRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[2]) + ".png").content)).resize((24, 24))
-                    im.paste(thirdRune, (96, 30))
-                elif m == 3:
-                    fourthRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[3]) + ".png").content)).resize((24, 24))
-                    im.paste(fourthRune, (96, 60))
-                elif m == 4:
-                    secondPageRune1 = Image.open(io.BytesIO(requests.get(urlRune + str(summonerSecondRunes[0]) + ".png").content)).resize((24, 24))
-                    im.paste(secondPageRune1,(24, 92))
-                elif m == 5:
-                    secondPageRune2 = Image.open(io.BytesIO(requests.get(urlRune + str(summonerSecondRunes[1]) + ".png").content)).resize((24, 24))
-                    im.paste(secondPageRune2, (53, 92))
-                elif m == 6:
-                    firstStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[0]) + ".png").content)).resize((24, 24))
-                    im.paste(firstStatRune, (163, 92))
-                elif m == 7:
-                    secondStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[1]) + ".png").content)).resize((24, 24))
-                    im.paste(secondStatRune, (197, 92))
+                im = Image.new("RGBA", (326, 120), (255, 0, 0, 0))
+                for m in range(9):
+                    if m == 0:
+                        mainRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[0]) + ".png").content)).resize((100, 96))
+                        im.paste(mainRune, (0, 0))
+                    elif m == 1:
+                        secondRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[1]) + ".png").content)).resize((24, 24))
+                        im.paste(secondRune, (96, 0))
+                    elif m == 2:
+                        thirdRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[2]) + ".png").content)).resize((24, 24))
+                        im.paste(thirdRune, (96, 30))
+                    elif m == 3:
+                        fourthRune = Image.open(io.BytesIO(requests.get(urlRune + str(summonerMainRunes[3]) + ".png").content)).resize((24, 24))
+                        im.paste(fourthRune, (96, 60))
+                    elif m == 4:
+                        secondPageRune1 = Image.open(io.BytesIO(requests.get(urlRune + str(summonerSecondRunes[0]) + ".png").content)).resize((24, 24))
+                        im.paste(secondPageRune1,(24, 92))
+                    elif m == 5:
+                        secondPageRune2 = Image.open(io.BytesIO(requests.get(urlRune + str(summonerSecondRunes[1]) + ".png").content)).resize((24, 24))
+                        im.paste(secondPageRune2, (53, 92))
+                    elif m == 6:
+                        firstStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[0]) + ".png").content)).resize((24, 24))
+                        im.paste(firstStatRune, (163, 92))
+                    elif m == 7:
+                        secondStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[1]) + ".png").content)).resize((24, 24))
+                        im.paste(secondStatRune, (197, 92))
+                        pass
+                    elif m == 8:
+                        thirdStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[2]) + ".png").content)).resize((24, 24))
+                        im.paste(thirdStatRune, (230, 92))
+                        pass
+                    
+                im.paste(Line, (99, 123))
+
+                starterItems, sItemsLen = statDatas['starter_items'][buildListNumber], len(statDatas['starter_items'][buildListNumber]['ids'])
+                coreItems = statDatas['core_items'][buildListNumber]
+                summonerSpells = statDatas['summoner_spells'][0]
+                
+                if sItemsLen == 2:
+                    for startItemImage in range(2):
+                        if startItemImage == 0:
+                            sItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][0]) + ".png").content)).resize((24, 24))
+                            im.paste(sItemOne, (180, 20))
+                        elif startItemImage == 1:
+                            sItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][1]) + ".png").content)).resize((24, 24))
+                            im.paste(sItemSecond, (213, 20))
+                
+                if sItemsLen == 3:
+                    for startItemImage in range(3):
+                        if startItemImage == 0:
+                            sItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][0]) + ".png").content)).resize((24, 24))
+                            im.paste(sItemOne, (163, 20))
+                        elif startItemImage == 1:
+                            sItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][1]) + ".png").content)).resize((24, 24))
+                            im.paste(sItemSecond, (197, 20))
+                        elif startItemImage == 2:
+                            sItemThird  = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][2]) + ".png").content)).resize((24, 24))
+                            im.paste(sItemThird, (230, 20))
+
+                for coreItemImage in range(3):
+                        if coreItemImage == 0:
+                            cItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][0]) + ".png").content)).resize((24, 24))
+                            im.paste(cItemOne, (163, 56))
+                        elif coreItemImage == 1:
+                            cItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][1]) + ".png").content)).resize((24, 24))
+                            im.paste(cItemSecond, (197, 56))
+                        elif coreItemImage == 2:
+                            cItemThird = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][2]) + ".png").content)).resize((24, 24))
+                            im.paste(cItemThird, (230, 56))
+
+
+
+                for spellsImage in range(2):
+                        if spellsImage == 0:
+                            spellOne = Image.open(io.BytesIO(requests.get(spellsUrl + str(summonerHashMap[summonerSpells['ids'][0]]) + ".png").content)).resize((24, 24))
+                            im.paste(spellOne, (277, 20))
+                        elif spellsImage == 1:
+                            spellTwo = Image.open(io.BytesIO(requests.get(spellsUrl + str(summonerHashMap[summonerSpells['ids'][1]]) + ".png").content)).resize((24, 24))
+                            im.paste(spellTwo, (277, 56))
+                
+                im.paste(trinket, (277, 92))
+                
+
+                if os.path.exists(self.path):
                     pass
-                elif m == 8:
-                    thirdStatRune = Image.open(io.BytesIO(requests.get(urlStats + str(summonerStatsRune[2]) + ".png").content)).resize((24, 24))
-                    im.paste(thirdStatRune, (230, 92))
-                    pass
-                   
-            im.paste(Line, (99, 123))
+                else:
+                    os.mkdir(self.path)
+                
+                im.save(r"%s\%s.png"%(self.path, buildListNumber))
+                print(f"Resim oluşturuldu #{buildListNumber} - {id(self)} - {datetime.now().strftime('%H:%M:%S')}")  
+                await self.ctx.edit(content=f"Build oluşturuldu #{buildListNumber+1}")
 
-            starterItems, sItemsLen = statDatas['starter_items'][buildListNumber], len(statDatas['starter_items'][buildListNumber]['ids'])
-            coreItems = statDatas['core_items'][buildListNumber]
-            summonerSpells = statDatas['summoner_spells'][0]
-            
-            if sItemsLen == 2:
-                for startItemImage in range(2):
-                    if startItemImage == 0:
-                        sItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][0]) + ".png").content)).resize((24, 24))
-                        im.paste(sItemOne, (180, 20))
-                    elif startItemImage == 1:
-                        sItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][1]) + ".png").content)).resize((24, 24))
-                        im.paste(sItemSecond, (213, 20))
-            
-            if sItemsLen == 3:
-                for startItemImage in range(3):
-                    if startItemImage == 0:
-                        sItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][0]) + ".png").content)).resize((24, 24))
-                        im.paste(sItemOne, (163, 20))
-                    elif startItemImage == 1:
-                        sItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][1]) + ".png").content)).resize((24, 24))
-                        im.paste(sItemSecond, (197, 20))
-                    elif startItemImage == 2:
-                        sItemThird  = Image.open(io.BytesIO(requests.get(itemsUrl + str(starterItems['ids'][2]) + ".png").content)).resize((24, 24))
-                        im.paste(sItemThird, (230, 20))
+                buildWR = format(int(coreItems['win']*100)/int(coreItems['play']), ".2f") if int(coreItems['win']) > 1 else 00.00
+                buildPickRate = format(coreItems['pick_rate']*100, ".2f") if int(coreItems['win']) > 1 else 00.00
 
-            for coreItemImage in range(3):
-                    if coreItemImage == 0:
-                        cItemOne = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][0]) + ".png").content)).resize((24, 24))
-                        im.paste(cItemOne, (163, 56))
-                    elif coreItemImage == 1:
-                        cItemSecond = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][1]) + ".png").content)).resize((24, 24))
-                        im.paste(cItemSecond, (197, 56))
-                    elif coreItemImage == 2:
-                        cItemThird = Image.open(io.BytesIO(requests.get(itemsUrl + str(coreItems['ids'][2]) + ".png").content)).resize((24, 24))
-                        im.paste(cItemThird, (230, 56))
+                buildEmbed = discord.Embed(title=f"{self.champName} - {self.position} Build #{buildListNumber+1}")
+                buildEmbed.add_field(name="Build Win Rate", value=f"%{buildWR}", inline=True)
+                buildEmbed.add_field(name="Build Pick Rate", value=f"%{buildPickRate}", inline=True)
+                buildEmbed.add_field(name="Skill Sıralaması", value=' > '.join(map(str,skillsOrder)), inline=False)
+                buildEmbed.set_thumbnail(url=self.champImageUrl)
 
-
-
-            for spellsImage in range(2):
-                    if spellsImage == 0:
-                        spellOne = Image.open(io.BytesIO(requests.get(spellsUrl + str(summonerHashMap[summonerSpells['ids'][0]]) + ".png").content)).resize((24, 24))
-                        im.paste(spellOne, (277, 20))
-                    elif spellsImage == 1:
-                        spellTwo = Image.open(io.BytesIO(requests.get(spellsUrl + str(summonerHashMap[summonerSpells['ids'][1]]) + ".png").content)).resize((24, 24))
-                        im.paste(spellTwo, (277, 56))
-            
-            im.paste(trinket, (277, 92))
-            
-
-            if os.path.exists(self.path):
-                pass
-            else:
-                os.mkdir(self.path)
-            
-            im.save(r"%s\%s.png"%(self.path, buildListNumber))
-            print(f"Resim oluşturuldu #{buildListNumber} - {id(self)} - {datetime.now().strftime('%H:%M:%S')}")  
-            await self.ctx.edit(content=f"Build oluşturuldu #{buildListNumber+1}")
-
-            buildWR = format(int(coreItems['win']*100)/int(coreItems['play']), ".2f") if int(coreItems['win']) > 1 else 00.00
-            buildPickRate = format(coreItems['pick_rate']*100, ".2f") if int(coreItems['win']) > 1 else 00.00
-
-            buildEmbed = discord.Embed(title=f"{self.champName} - {self.position} Build #{buildListNumber+1}")
-            buildEmbed.add_field(name="Build Win Rate", value=f"%{buildWR}", inline=True)
-            buildEmbed.add_field(name="Build Pick Rate", value=f"%{buildPickRate}", inline=True)
-            buildEmbed.add_field(name="Skill Sıralaması", value=' > '.join(map(str,skillsOrder)), inline=False)
-            buildEmbed.set_thumbnail(url=self.champImageUrl)
-
-            with open(self.path+r"\%s.png"%buildListNumber, 'rb') as f:
-                picture = discord.File(f)
-                mes = await self.ctx.guild.get_member(335088129134297088).send(file=picture)
-                runeEmbedUrl = mes.attachments[0].url
-                await mes.delete()
-            buildEmbed.set_image(url=runeEmbedUrl)
-            self.embedList.append(buildEmbed)
+                with open(self.path+r"\%s.png"%buildListNumber, 'rb') as f:
+                    picture = discord.File(f)
+                    mes = await self.ctx.guild.get_member(335088129134297088).send(file=picture)
+                    runeEmbedUrl = mes.attachments[0].url
+                    await mes.delete()
+                buildEmbed.set_image(url=runeEmbedUrl)
+                self.embedList.append(buildEmbed)
+        except IndexError:
+            pass
 
 
     async def getBuildEmbedList(self):
