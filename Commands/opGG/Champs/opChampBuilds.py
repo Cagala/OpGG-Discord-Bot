@@ -16,7 +16,7 @@ class opChampBuilds:
         self.champName = champName
         self.position = position
 
-        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}&hl=TR"
+        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}"
         self.headers = headers if headers else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54", "accept" : "application/json"}
         self.ctx = ctx
         self.ID = selfRequsestID
@@ -80,7 +80,7 @@ class opChampBuilds:
         firstPageEmbed.add_field(name="KDA", value=f"{self.KDA}", inline=True)
         firstPageEmbed.add_field(name="Role Rate", value=f"%{self.RoleRate}", inline=True)
         
-        firstPageEmbed.add_field(name="Oynanış İpuçları", value="\n".join(map(str, self.tipsList)), inline=False)
+        firstPageEmbed.add_field(name="Gameplay Tips", value="\n".join(map(str, self.tipsList)), inline=False)
         firstPageEmbed.set_thumbnail(url=self.champImageUrl)
 
         self.embedList.append(firstPageEmbed)
