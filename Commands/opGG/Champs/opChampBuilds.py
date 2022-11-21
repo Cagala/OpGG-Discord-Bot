@@ -91,7 +91,7 @@ class opChampBuilds:
         runeDatas = self.dataJson['pageProps']['data']['runes']
         statDatas = self.dataJson['pageProps']['data']
 
-        skillsOrder = statDatas['skills'][0]['order'] if len(statDatas['skills'][0]['order']) else "Veri alınamadı"
+        skillsOrder = statDatas['skills'][0]['order'] if len(statDatas['skills']) else "Veri alınamadı"
 
         summonerHashMap = {1: 'SummonerBoost', 3: 'SummonerExhaust', 4: 'SummonerFlash', 6: 'SummonerHaste', 7: 'SummonerHeal', 11: 'SummonerSmite', 12: 'SummonerTeleport', 13: 'SummonerMana', 14: 'SummonerDot', 21: 'SummonerBarrier', 30: 'SummonerPoroRecall', 31: 'SummonerPoroThrow', 32: 'SummonerSnowball', 39: 'SummonerSnowURFSnowball_Mark', 54: 'Summoner_UltBookPlaceholder', 55: 'Summoner_UltBookSmitePlaceholder'}
         
