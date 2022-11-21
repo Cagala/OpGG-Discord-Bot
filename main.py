@@ -16,7 +16,7 @@ async def on_ready():
     print(f"{bot.user} has logged.")
 
 
-@bot.command
+@bot.command()
 async def test(ctx, *args):
     ctx.send(*args)
 
