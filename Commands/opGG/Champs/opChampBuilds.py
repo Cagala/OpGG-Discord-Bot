@@ -16,7 +16,7 @@ class opChampBuilds:
         self.champName = champName
         self.position = position
 
-        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}?hl=TR"
+        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}?hl=tr_TR"
         self.headers = headers if headers else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54", "accept" : "application/json"}
         self.ctx = ctx
         self.ID = selfRequsestID
@@ -91,7 +91,7 @@ class opChampBuilds:
         runeDatas = self.dataJson['pageProps']['data']['runes']
         statDatas = self.dataJson['pageProps']['data']
 
-        skillsOrder = statDatas['skills'][0]['order'] if statDatas['skills'][0]['order'] else "Veri alınamadı"
+        skillsOrder = statDatas['skills'][0]['order'] if len(statDatas['skills'][0]['order']) else "Veri alınamadı"
 
         summonerHashMap = {1: 'SummonerBoost', 3: 'SummonerExhaust', 4: 'SummonerFlash', 6: 'SummonerHaste', 7: 'SummonerHeal', 11: 'SummonerSmite', 12: 'SummonerTeleport', 13: 'SummonerMana', 14: 'SummonerDot', 21: 'SummonerBarrier', 30: 'SummonerPoroRecall', 31: 'SummonerPoroThrow', 32: 'SummonerSnowball', 39: 'SummonerSnowURFSnowball_Mark', 54: 'Summoner_UltBookPlaceholder', 55: 'Summoner_UltBookSmitePlaceholder'}
         
