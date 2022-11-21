@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from discord.ui import View, Button
-import threading
 
 from Commands import opGG
 
@@ -15,6 +14,11 @@ bot = commands.Bot(command_prefix="!!", intents=discord.Intents.all(), debug_gui
 @bot.event
 async def on_ready():
     print(f"{bot.user} has logged.")
+
+
+@bot.command
+async def test(ctx, *args):
+    ctx.send(*args)
 
 
 @bot.command()
@@ -47,5 +51,12 @@ async def opChamps(ctx: discord.ApplicationContext,
                 position: discord.Option(str, "Koridor seçin", choices=["TOP", "JUNGLE", "MID", "ADC", "SUPPORT"])):
 
     await opGG.opGGChamps(ctx, bot, champ, position).setup()
+
+@bot.slash_command(name="senpai_champ", description="Get champ roel info via Senpai", name_localizations={"tr" : "senpai_karakter"}, description_localitzations={"tr" : "Senpai'den karakter buildlerini alın."})
+async def opChamps(ctx: discord.ApplicationContext,
+                champ: discord.Option(str, "Karakter seçin", choices=[], requried=True),
+                position: discord.Option(str, "Koridor seçin", choices=["TOP", "JUNGLE", "MID", "ADC", "SUPPORT"])):
+
+    pass
 
 bot.run("MTAxNDI1OTYwNTE1ODc2MDQ2OA.G6JttU.cqLFMwqXQHetfDGUwN5vz5BCfutA1Umea2dLgo")
