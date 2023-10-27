@@ -17,7 +17,7 @@ class opChampBuilds:
         self.position = position
 
         self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}?hl=tr_TR"
-        self.headers = headers if headers else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54", "accept" : "application/json"}
+        self.headers = headers if headers else {"User-Agent" : "YOUR USE AGENT HERE", "accept" : "application/json"}
         self.ctx = ctx
         self.ID = selfRequsestID
 
@@ -212,7 +212,10 @@ class opChampBuilds:
 
                 with open(self.path+r"\%s.png"%buildListNumber, 'rb') as f:
                     picture = discord.File(f)
-                    mes = await self.ctx.guild.get_member(335088129134297088).send(file=picture)
+                    """Embeds don't work with image files. I send to the generated image to
+                        myself via bot and then copy that url of the image. So, I use Discord
+                        as cloud service."""
+                    mes = await self.ctx.guild.get_member("YOUR DISCORD ID").send(file=picture)
                     runeEmbedUrl = mes.attachments[0].url
                     await mes.delete()
                 buildEmbed.set_image(url=runeEmbedUrl)
