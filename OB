@@ -1,0 +1,314 @@
+[33mcommit 137ca58359f717b571a64b87ef8ed0edbd88d722[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: a154e6c 4996947
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Thu Nov 2 15:44:57 2023 +0300
+
+    Merge branch 'main' of https://github.com/Cagala/OpGG-Discord-Bot
+
+[33mcommit a154e6c8ae093c01bc7165fddaa4e5928de477b4[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Thu Nov 2 15:42:13 2023 +0300
+
+    Project added
+
+[33mcommit 499694744a60f23f99e669725a359034c226ae68[m
+Author: lsaac <115490518+Cagala@users.noreply.github.com>
+Date:   Thu Nov 2 14:11:24 2023 +0300
+
+    Initial commit
+
+[33mcommit b1cfae405837aea0af7b694327c159ac0b577ad3[m
+Author: lsaac <115490518+Cagala@users.noreply.github.com>
+Date:   Fri Oct 27 14:46:42 2023 +0300
+
+    Update opChampBuilds.py
+
+[33mcommit 848dc0e25f44e0401c44e03d9d4913af46eb29e1[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Nov 22 00:18:53 2022 +0300
+
+    Update
+
+[33mcommit d391ed1bbf35b3b40d27a233d8ed6290ab5a77de[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Nov 22 00:16:54 2022 +0300
+
+    Fix bugs
+
+[33mcommit aec6c19bfc4ef70a1fb212f057f2e00faa6806ee[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:42:22 2022 +0300
+
+    Update
+
+[33mcommit c5784acd57586f8bd65aa3bea55b075b142f6be1[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:37:51 2022 +0300
+
+    Update
+
+[33mcommit f1e49f4b951b11cb77003e22add3dd0e20b44883[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:37:42 2022 +0300
+
+    Update
+
+[33mcommit e81e14c1949e1fa71846fd7437548b95af1da81f[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:25:33 2022 +0300
+
+    F
+
+[33mcommit 1d7a67fd29a2221054f328cdd0db29e0c5024f4f[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:23:25 2022 +0300
+
+    Update
+
+[33mcommit 252f0d6d152d7e770e6a8a4495823e5d7f292c17[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:20:06 2022 +0300
+
+    Update
+
+[33mcommit 7d3a73649a8b857a53898bd019ca3f94b0f91add[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Mon Nov 21 23:17:19 2022 +0300
+
+    Update
+
+[33mcommit 1131d8ab413c78ba57c29521aaa4c2cec734292a[m
+Merge: 1867d3e b95f8a5
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Sat Oct 15 17:19:42 2022 +0300
+
+    Fixed Bugs
+
+[33mcommit 1867d3e4d4e9f8fab20aa59bcf2840130e1b018c[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Sat Oct 15 17:16:11 2022 +0300
+
+    Fixed Bugs
+
+[33mcommit b95f8a5689c2d3df69a1aa84917064b15d058fea[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Thu Oct 13 19:29:06 2022 +0300
+
+    Update opChampBuilds.py
+
+[33mcommit c7cb3bd78c07888599b5a980620a3c1a5f17a8d2[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Thu Oct 13 19:25:54 2022 +0300
+
+    Update opChampBuilds.py
+
+[33mcommit 13c374e5f14f6bf263b356f6eec1451ffc62f926[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 23:37:59 2022 +0300
+
+    Update opChampBuilds.py
+
+[33mcommit e9ee3422e7143cfe4fc433348f856c416bcef399[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 23:35:19 2022 +0300
+
+    Update opGGChamps.py
+
+[33mcommit b20554cb5fa1e97c21412077da984eb8f6a4f506[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 23:35:00 2022 +0300
+
+    Update opGGAccount.py
+
+[33mcommit 65b0a0f1037923e97e887bf979173887a96371c7[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Oct 11 23:33:17 2022 +0300
+
+    Update
+
+[33mcommit e4fe76e6225433ed646e5195d5a1025ca48594e9[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 23:14:50 2022 +0300
+
+    Update opGGAccount.py
+
+[33mcommit f94fb6d93b9125442fbca4a84274f1094d302238[m
+Merge: 4f1e5a8 14355b3
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Oct 11 23:08:34 2022 +0300
+
+    Merge branch 'master' of https://github.com/Cagala/D3-PDC
+
+[33mcommit 4f1e5a892b01fbedfe0429edfe05b00f4c2bf805[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Oct 11 23:08:25 2022 +0300
+
+    Update
+
+[33mcommit 14355b3e7a7423666caaa92b76d2d05e6241af1b[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:38:41 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit ecd8297fc5e67f44e48c5a3c52d7598d552b1538[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:30:52 2022 +0300
+
+    Update Procfile
+
+[33mcommit cd416fb16f9ee3d7a9258ecd2f94221239104ce5[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:28:13 2022 +0300
+
+    Delete runtime.txt
+
+[33mcommit b4aadb60b2e8f78cfbd9291a71170f437ab5cb0d[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:27:37 2022 +0300
+
+    Update runtime.txt
+
+[33mcommit b75f2047eff21b2cae46f5bd7301e4a211fe9584[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:26:30 2022 +0300
+
+    Create Procfile
+
+[33mcommit 444bd72f0e52d15142b803bf92059d793a2f7e3d[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:26:14 2022 +0300
+
+    Create runtime.txt
+
+[33mcommit 3163c4f29a593ff5959adff6e531dcaff19a26ff[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:19:40 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit 3f5ea1d8535ab43387457ca769f53396bb6a66ea[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:14:46 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit 613faa7c35e2829136c59fa696c4dba9357e9632[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:14:04 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit 72f81d524b2a78621717461805b9cb5fe6edd364[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:12:49 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit e3e801a209fc6229612af5ba5f4aa2af986c62e3[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:12:07 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit c17a7646988563aae231683f1d26792986d51668[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:09:07 2022 +0300
+
+    Update requirements.txt
+
+[33mcommit 342e5362cdd5266215b80a37e3a22874ab95e1ab[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:07:38 2022 +0300
+
+    Update opAcGames.py
+
+[33mcommit 477c563d8d2f9d9d4dbc611168769948607762e4[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 22:07:09 2022 +0300
+
+    Create requirements.txt
+
+[33mcommit d62de1655a97c910e352170be897beeff4d85836[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:43:20 2022 +0300
+
+    Create README.md
+
+[33mcommit 3b0649b6519203d52bb501e08e3227d6f0eac737[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:43:04 2022 +0300
+
+    Create README.md
+
+[33mcommit a8c6d2adabc242d93f57388e1365900015a33697[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:42:41 2022 +0300
+
+    Delete s.py
+
+[33mcommit 5a8ed151ee593dd0dec95c5b848416537f30c328[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:42:29 2022 +0300
+
+    Create s.py
+
+[33mcommit 11828d01cf3e0d7d540e98fc830bf98e3433ec73[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:41:29 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2633286265632 directory
+
+[33mcommit 4461c5bd14b10bdab2252c7420802d0e5d567e57[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:41:22 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2363563021264 directory
+
+[33mcommit 656d74e2d22768b0a552e0307e05f45a62b5ce74[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:41:14 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2274467197040 directory
+
+[33mcommit 0556996ef3b080768ea25411195168114813e502[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:41:07 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2225765640656 directory
+
+[33mcommit e5eb2e2835e607d2586311afeab980e3768eadc8[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:41:00 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2225760761648 directory
+
+[33mcommit ba027257df1a000e6ace498cb9c9fb697120bee0[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:40:51 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2223751284912 directory
+
+[33mcommit e33b27407f57b8786547a137a3e60349aaab6c17[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:40:41 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2193048215904 directory
+
+[33mcommit 1dddc34f64ae4bc35ed65577487d5920baac0999[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:40:35 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2185966569792 directory
+
+[33mcommit 0436dc8431e82baa47ab3e848e410d00cf5f5f35[m
+Author: Cagala <115490518+Cagala@users.noreply.github.com>
+Date:   Tue Oct 11 21:40:27 2022 +0300
+
+    Delete Commands/opGG/Champs/Runes/2185964365616 directory
+
+[33mcommit f4e3212d5307b4a17ee8412baf7c487235ada05c[m
+Author: Cagala <cagatayozevim+github@gmail.com>
+Date:   Tue Oct 11 21:35:06 2022 +0300
+
+    All files uploaded
