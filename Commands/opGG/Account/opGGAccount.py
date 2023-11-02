@@ -75,7 +75,7 @@ class opGGAccount(View):
             else:
                 self.want_delete = True
                 button.style = discord.ButtonStyle.danger
-                button.label = "Eminseniz Tıklayın."
+                button.label = "Confirm."
                 await interaction.response.edit_message(view=self)
 
         #Next Page Button
@@ -120,7 +120,7 @@ class opGGAccount(View):
             self.children[1].disabled = True
 
             accountId = GetOPID(self.accountName).getId()
-            print(f"ID Alındı ({self}): {datetime.now().strftime('%H:%M:%S')} {accountId}")
+            print(f"The ID has been got ({self}): {datetime.now().strftime('%H:%M:%S')} {accountId}")
             games = await opAcGames(ctx=self.ctx, opAccountID=accountId, requestSelfID=self.selfID).getEmbedList()
             firstPage = opAcFirst(opAccountID=accountId).getEmbed()
 

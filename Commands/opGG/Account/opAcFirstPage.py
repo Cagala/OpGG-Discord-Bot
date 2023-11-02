@@ -8,7 +8,7 @@ class opAcFirst():
 
     def __init__(self, opAccountID: str, headers:dict = None):
         self.accInfApi = f"https://tr.op.gg/api/summoners/tr/{opAccountID}"
-        self.headers = headers if headers else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54", "accept" : "application/json"}
+        self.headers = headers if headers else {"User-Agent" : "YOUR USER AGENT", "accept" : "application/json"}
         
         self.embed = discord.Embed(color=EMBED_COLOR)
 

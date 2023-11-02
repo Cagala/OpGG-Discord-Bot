@@ -8,7 +8,7 @@ class Get_NEXTID():
     def __init__(self, champName:str, header:dict = None) -> None:
         self.champName = champName
         self.url = "https://www.op.gg/champions/{}/top/build?region=global&tier=platinum_plus".format(self.champName)
-        self.headers = header if header else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54"}
+        self.headers = header if header else {"User-Agent" : "YOUR USER AGENT"}
         
 
     def get_NEXTId(self) -> str:

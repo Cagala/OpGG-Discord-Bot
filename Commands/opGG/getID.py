@@ -8,7 +8,7 @@ class GetOPID():
     def __init__(self, account:str, header:dict = None) -> None:
         self.accountName = account
         self.url = "https://tr.op.gg/summoners/tr/{}".format(self.accountName)
-        self.headers = header if header else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54"}
+        self.headers = header if header else {"User-Agent" : "YOUR USER AGENT"}
         
 
     def getId(self) -> str:

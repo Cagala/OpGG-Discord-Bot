@@ -11,8 +11,9 @@ EMBED_COLOR = 0x3B920A
 class opAcGames():
 
     def __init__(self, ctx, opAccountID:str, requestSelfID:int, headers:dict = None):
-        self.gamesInfApi = f"https://op.gg/api/v1.0/internal/bypass/games/tr/summoners/{opAccountID}?&limit=10&hl=tr_TR&game_type=total"
-        self.headers = headers if headers else {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 OPR/90.0.4480.54", "accept" : "application/json"}
+        self.lang = "tr_TR"
+        self.gamesInfApi = f"https://op.gg/api/v1.0/internal/bypass/games/tr/summoners/{opAccountID}?&limit=10&hl={self.lang}&game_type=total"
+        self.headers = headers if headers else {"User-Agent" : "YOUR USER AGENT", "accept" : "application/json"}
         self.ctx = ctx
         self.ID = requestSelfID
 
@@ -73,7 +74,7 @@ class opAcGames():
                 os.mkdir(self.path)
             
             im.save(r"%s\%s.png"%(self.path, i))
-            print(f"Resim oluşturuldu #{i} - {self} - {datetime.now().strftime('%H:%M:%S')}")        
+            print(f"The image has been created #{i} - {self} - {datetime.now().strftime('%H:%M:%S')}")        
         
 
     def get_datas(self):
@@ -85,9 +86,9 @@ class opAcGames():
             gameData = dataJson[i]
             summonerData = gameData['myData']
 
-            gameMap = "Sihirdar Vadisi" if gameData['game_map'] == "SUMMONERS_RIFT" else "ARAM"
+            gameMap = "Summoners Rift" if gameData['game_map'] == "SUMMONERS_RIFT" else "ARAM"
 
-            champAPIData = json.loads(requests.get(url=f"https://op.gg/api/v1.0/internal/bypass/meta/champions/{summonerData['champion_id']}?hl=tr_TR", headers=self.headers).content)
+            champAPIData = json.loads(requests.get(url=f"https://op.gg/api/v1.0/internal/bypass/meta/champions/{summonerData['champion_id']}?hl={self.lang}", headers=self.headers).content)
             championName = champAPIData['data']['name']
             championUrl = champAPIData['data']['image_url']
            
@@ -119,7 +120,7 @@ class opAcGames():
             summonerDeath = summonerData['stats']['death']
             summonerAssist = summonerData['stats']['assist']
             summonerCS = int(summonerData['stats']['minion_kill']) + int(summonerData['stats']['neutral_minion_kill'])
-            print(f"Veriler alındı. Veriler tanımlanıyor {datetime.now().strftime('%H:%M:%S')}")
+            print(f"Data has been got. Data is being defined {datetime.now().strftime('%H:%M:%S')}")
 
             self.datas[f'{i}.gameMap'] = gameMap
             self.datas[f'{i}.championName'] = championName
@@ -144,7 +145,7 @@ class opAcGames():
             self.datas[f'{i}.summonerDeath'] = summonerDeath
             self.datas[f'{i}.summonerAssist'] = summonerAssist
             self.datas[f'{i}.summonerCS'] = summonerCS
-            print(f"Veriler tanımlandı. {datetime.now().strftime('%H:%M:%S')}")
+            print(f"Data has been defined. {datetime.now().strftime('%H:%M:%S')}")
 
 
 

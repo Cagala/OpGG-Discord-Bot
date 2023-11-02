@@ -74,7 +74,7 @@ class opGGChamps(View):
             else:
                 self.want_delete = True
                 button.style = discord.ButtonStyle.danger
-                button.label = "Eminseniz Tıklayın."
+                button.label = "Confirm."
                 await interaction.response.edit_message(view=self)
 
         #Next Page Button
@@ -119,7 +119,7 @@ class opGGChamps(View):
             self.children[1].disabled = True
 
             _NEXTID = Get_NEXTID(self.champName).get_NEXTId()
-            print(f"ID Alındı ({self}): {datetime.now().strftime('%H:%M:%S')}")
+            print(f"The ID has been got ({self}): {datetime.now().strftime('%H:%M:%S')}")
             builds = await opChampBuilds(ctx=self.ctx, champName=self.champName, selfRequsestID=self.selfID, _NEXT=_NEXTID, position=self.position).getBuildEmbedList()
 
             self.EmbedList.add_embeds(*builds)

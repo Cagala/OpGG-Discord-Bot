@@ -16,7 +16,8 @@ class opChampBuilds:
         self.champName = champName
         self.position = position
 
-        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}?hl=tr_TR"
+        self.lang = "tr_TR"
+        self.buildsApi = f"https://www.op.gg/_next/data/{_NEXT}/champions/{self.champName}/top/build.json?region=global&tier=diamond&champion={self.champName}&position={self.position}?hl={self.lang}"
         self.headers = headers if headers else {"User-Agent" : "YOUR USE AGENT HERE", "accept" : "application/json"}
         self.ctx = ctx
         self.ID = selfRequsestID
@@ -27,8 +28,8 @@ class opChampBuilds:
         self.path = os.path.dirname(__file__) + r"\Runes\%s"%self.ID 
 
     async def prepareSystem(self):
-        print(f"Önhazırlık ve ilk sayfa yapılıyor - {datetime.now().strftime('%H:%M:%S')}")
-        await self.ctx.edit(content="Veriler alınıyor...")
+        print(f"Preparing and the first page are being made - {datetime.now().strftime('%H:%M:%S')}")
+        await self.ctx.edit(content="Data is being fetched...")
         r = requests.get(url=self.buildsApi, headers=self.headers)
         
         self.dataJson = json.loads(r.content)
@@ -36,7 +37,7 @@ class opChampBuilds:
         try:
             champPositionsData = self.dataJson['pageProps']['data']['summary']['summary']['positions']
         except:
-            errorEmbed = discord.Embed(title="Hata!", description=f"Seçtiğiniz karakteri bulamadık! Karakter ismini doğru girdiğinizden emin olun.\n\n`Girilen isim`: **{self.champName}**", color=EMBED_COLOR)
+            errorEmbed = discord.Embed(title="Error!", description=f"We couldn't find chosen champion! Make sure that champion name was entered correctly.\n\n`The entered name`: **{self.champName}**", color=EMBED_COLOR)
             errorEmbed.set_thumbnail(url="https://cdn.discordapp.com/avatars/1014259605158760468/1ae34e5436c31387ae5f75f1a9e32ce9.webp")
             
             self.embedList.append(errorEmbed)
@@ -47,7 +48,7 @@ class opChampBuilds:
             champPositions.append(champPositionsData[roleNumber]['name'])
 
         if self.position not in champPositions:
-            errorEmbed = discord.Embed(title="Hata!", description=f"Seçtiğiniz karakter arattığınız rolde sıkça oynanmamış. Lütfen yaygın koridorları seçin.\n\n`{self.champName} için pozisyonlar`: {' '.join(str(x) for x in champPositions)}", color=EMBED_COLOR)
+            errorEmbed = discord.Embed(title="Error!", description=f"The chosen champion hasn't been played in the chosen lane. Please choose common lane.\n\n`Common lanes for {self.champName}: `: {' '.join(str(x) for x in champPositions)}", color=EMBED_COLOR)
             errorEmbed.set_thumbnail(url="https://cdn.discordapp.com/avatars/1014259605158760468/1ae34e5436c31387ae5f75f1a9e32ce9.webp")
             
             self.embedList.append(errorEmbed)
@@ -72,7 +73,7 @@ class opChampBuilds:
         for i in self.tips:
             self.tipsList.append(f"**⋆** {i}")
         if self.tipsList == []:
-            self.tipsList.append("**⋆** Veri bulunamadı.")
+            self.tipsList.append("**⋆** Data is not found.")
 
         firstPageEmbed = discord.Embed(title=f"{self.champName} - {self.position}", color=EMBED_COLOR)
         
@@ -198,8 +199,8 @@ class opChampBuilds:
                     os.mkdir(self.path)
                 
                 im.save(r"%s\%s.png"%(self.path, buildListNumber))
-                print(f"Resim oluşturuldu #{buildListNumber} - {id(self)} - {datetime.now().strftime('%H:%M:%S')}")  
-                await self.ctx.edit(content=f"Build oluşturuldu #{buildListNumber+1}")
+                print(f"The image have been created #{buildListNumber} - {id(self)} - {datetime.now().strftime('%H:%M:%S')}")  
+                await self.ctx.edit(content=f"Build have been created #{buildListNumber+1}")
 
                 buildWR = format(int(coreItems['win']*100)/int(coreItems['play']), ".2f") if int(coreItems['win']) > 1 else 00.00
                 buildPickRate = format(coreItems['pick_rate']*100, ".2f") if int(coreItems['win']) > 1 else 00.00
@@ -207,7 +208,7 @@ class opChampBuilds:
                 buildEmbed = discord.Embed(title=f"{self.champName} - {self.position} Build #{buildListNumber+1}")
                 buildEmbed.add_field(name="Build Win Rate", value=f"%{buildWR}", inline=True)
                 buildEmbed.add_field(name="Build Pick Rate", value=f"%{buildPickRate}", inline=True)
-                buildEmbed.add_field(name="Skill Sıralaması", value=' > '.join(map(str,skillsOrder)), inline=False)
+                buildEmbed.add_field(name="Skill Order", value=' > '.join(map(str,skillsOrder)), inline=False)
                 buildEmbed.set_thumbnail(url=self.champImageUrl)
 
                 with open(self.path+r"\%s.png"%buildListNumber, 'rb') as f:
@@ -226,5 +227,5 @@ class opChampBuilds:
 
     async def getBuildEmbedList(self):
         await self.prepareSystem()
-        print(f"Embedlar hazırlandı mesaj atılıyor - {datetime.now().strftime('%H:%M:%S')}")
+        print(f"The embeds are ready. The embeds is being sent - {datetime.now().strftime('%H:%M:%S')}")
         return self.embedList
